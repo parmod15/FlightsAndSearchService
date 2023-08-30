@@ -34,6 +34,9 @@ class AirportRepository {
           id: airportId,
         },
       });
+      airport.name = data.name;
+      await airport.save();
+      return airport;
     } catch (error) {
       console.log("Something went wrong in repository later");
       throw { error };
@@ -43,8 +46,6 @@ class AirportRepository {
   async getAirport(airportId) {
     try {
       const airport = await Airport.findByPk(airportId);
-      airport.name = data.name;
-      await airport.save();
       return airport;
     } catch (error) {
       console.log("Something went wrong in repository layer");
