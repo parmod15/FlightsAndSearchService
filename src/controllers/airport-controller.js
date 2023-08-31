@@ -66,11 +66,11 @@ const update = async (req, res) => {
 const get = async (req, res) => {
   try {
     const airport = await airportService.getAirport(req.params.id);
-    return req.status(200).json({
+    return res.status(200).json({
       data: airport,
       success: true,
-      message: "Successfully fetched an Airport",
-      error: {},
+      message: "Sucessfully fetched an Airpot",
+      error: error,
     });
   } catch (error) {
     return res.status(500).json({
