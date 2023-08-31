@@ -5,5 +5,5 @@ function compareTime(timeString1, timeString2) {
 }
 
 module.exports = {
-  compareTime,
+  compareTime,  
 };
