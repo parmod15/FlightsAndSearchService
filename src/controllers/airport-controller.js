@@ -4,11 +4,11 @@ const airportService = new AirportService();
 
 const create = async (req, res) => {
   try {
-    const airport = await airportService.createAirport(req.body);
+    const response = await airportService.create(req.body);
     return res.status(201).json({
-      data: airport,
+      data: response,
       success: true,
-      message: " Successfully create a Airport",
+      message: " Successfully created the  Airport",
       error: {},
     });
   } catch (error) {
