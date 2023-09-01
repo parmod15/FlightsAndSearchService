@@ -1,7 +1,7 @@
 const { Airplane } = require("../models/index");
 
 class AirplaneRepository {
-  async getAiplane(id) {
+  async getAirplane(id) {
     try {
       const airplane = await Airplane.findByPk(id);
       return airplane;
@@ -10,8 +10,6 @@ class AirplaneRepository {
       throw { error };
     }
   }
-
-  
 }
 
 module.exports = AirplaneRepository;

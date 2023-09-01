@@ -28,6 +28,7 @@ class FlightRepository {
   }
 
   async createFlight(data) {
+    
     try {
       const flight = await Flights.create(data);
       return flight;

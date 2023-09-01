@@ -25,7 +25,7 @@ const create = async (req, res) => {
 // DELETE -> /city/:id
 const destroy = async (req, res) => {
   try {
-    const response = await airportService.deleteAirport(req.params.id);
+    const response = await airportService.destroy(req.params.id);
     return res.status(200).json({
       data: response,
       success: true,
@@ -65,9 +65,9 @@ const update = async (req, res) => {
 // GET -> /citiy/:id
 const get = async (req, res) => {
   try {
-    const airport = await airportService.getAirport(req.params.id);
+    const response = await airportService.get(req.params.id);
     return res.status(200).json({
-      data: airport,
+      data: response,
       success: true,
       message: "Sucessfully fetched an Airpot",
       error: error,
