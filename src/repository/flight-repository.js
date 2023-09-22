@@ -28,7 +28,6 @@ class FlightRepository {
   }
 
   async createFlight(data) {
-    
     try {
       const flight = await Flights.create(data);
       return flight;
@@ -55,6 +54,20 @@ class FlightRepository {
         where: filterObject,
       });
       return flights;
+    } catch (error) {
+      console.log("Something went wrong in repository layer");
+      throw { error };
+    }
+  }
+
+  async updateFlights(flightId, data) {
+    try {
+      await Flights.update(data, {
+        where: {
+          id: flightId,
+        },
+      });
+      return true;
     } catch (error) {
       console.log("Something went wrong in repository layer");
       throw { error };
